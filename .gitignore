@@ -26,26 +26,46 @@ env/
 ENV/
 .venv
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Jupyter Notebook Checkpoints (but keep notebooks themselves with outputs)
+.ipynb_checkpoints/
 *.ipynb_checkpoints/
 
-# Data files (large datasets)
+# Data files - DO NOT UPLOAD RAW DATASETS
 data/raw/*.csv
 data/raw/*.json
 data/raw/*.parquet
-*.csv
-*.json
-*.parquet
+data/raw/*.xlsx
+data/raw/*.xls
 
-# Model files (if large)
-models/
-*.pkl
-*.h5
-*.pt
-*.pth
-*.ckpt
-*.safetensors
+# Processed data files - exclude (can be regenerated from notebooks)
+data/processed/*.csv
+data/processed/*.json
+
+# Prediction/output CSVs - DO NOT UPLOAD
+*prediction*.csv
+*output*.csv
+*results*.csv
+confusion_matrix.csv
+predictions.csv
+test_predictions.csv
+train_predictions.csv
+
+# Model files - allow small ones, exclude large ones
+# Large model files (uncomment if models are > 50MB):
+# models/*.h5
+# models/*.pth
+# models/*.ckpt
+# models/*.safetensors
+# models/*.pb
+
+# Small model files are OK (pkl, joblib usually small)
+# *.pkl files will be tracked unless in models/ directory
+
+# Log files - DO NOT UPLOAD
+*.log
+logs/
+*.out
+*.err
 
 # IDE
 .vscode/
@@ -58,21 +78,28 @@ models/
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-logs/
-
 # Environment variables
 .env
 .env.local
 
-# Temporary files
+# Temporary files - DO NOT UPLOAD
 *.tmp
 *.temp
 tmp/
 temp/
+*.cache
+*.pyc
 
-# Output files
+# Output directories (but keep images/plots in notebooks)
 outputs/
 results/
+checkpoints/
 
+# Keep these files - they should be tracked:
+# *.ipynb (Jupyter notebooks with outputs)
+# README.md
+# requirements.txt
+# environment.yml
+# .gitignore
+# src/*.py (source code)
+# Images/plots saved in notebooks or images/ folder

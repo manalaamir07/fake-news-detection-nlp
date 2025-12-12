@@ -50,17 +50,6 @@ predictions.csv
 test_predictions.csv
 train_predictions.csv
 
-# Model files - allow small ones, exclude large ones
-# Large model files (uncomment if models are > 50MB):
-# models/*.h5
-# models/*.pth
-# models/*.ckpt
-# models/*.safetensors
-# models/*.pb
-
-# Small model files are OK (pkl, joblib usually small)
-# *.pkl files will be tracked unless in models/ directory
-
 # Log files - DO NOT UPLOAD
 *.log
 logs/
@@ -90,16 +79,9 @@ temp/
 *.cache
 *.pyc
 
-# Output directories (but keep images/plots in notebooks)
+
 outputs/
-results/
+
 checkpoints/
 
-# Keep these files - they should be tracked:
-# *.ipynb (Jupyter notebooks with outputs)
-# README.md
-# requirements.txt
-# environment.yml
-# .gitignore
-# src/*.py (source code)
-# Images/plots saved in notebooks or images/ folder
+
